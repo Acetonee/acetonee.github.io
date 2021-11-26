@@ -1,0 +1,4 @@
+baseURL = "https://acetonee.gituhb.io"
+languageCode = "en-HK"
+title = "My New Hugo Site"
+theme = "PaperMod"
