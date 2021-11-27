@@ -1,4 +1,4 @@
-baseURL = "https://acetonee.gituhb.io"
+baseURL = "https://acetonee.github.io"
 languageCode = "en-HK"
 title = "My New Hugo Site"
 theme = "PaperMod"
