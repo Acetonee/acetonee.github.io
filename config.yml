@@ -20,8 +20,8 @@ params:
     doNotShowTitle: true
   env: production
   description: Idk askdjfksdjdciawueb
-  cover:
-    image: "media/tea-map.jpg"
+  images:
+    - "media/tea-map.jpg"
 menu:
   main:
     - name: All Regions
