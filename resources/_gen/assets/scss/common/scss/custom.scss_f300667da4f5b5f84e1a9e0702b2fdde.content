@@ -2,30 +2,68 @@
   --gap: 24px;
   --content-gap: 20px;
   --nav-width: 1024px;
-  --main-width: 720px;
+  --main-width: 840px;
   --header-height: 60px;
   --footer-height: 60px;
   --radius: 8px;
-  --theme: rgb(255, 255, 255);
-  --entry: rgb(255, 255, 255);
-  --primary: rgb(30, 30, 30);
-  --secondary: rgb(108, 108, 108);
-  --tertiary: rgb(214, 214, 214);
-  --content: rgb(31, 31, 31);
-  --code-bg: rgb(245, 245, 245);
-  --border: rgb(238, 238, 238); }
+  --theme1: #F2E9DB;
+  --theme2: #D6D2C4;
+  --theme3: #DDCBA4;
+  --theme4: #D4AD67;
+  --theme5: #868165;
+  --theme6: #B2B1B2;
+  --theme7: #304c5a;
+  --theme8: #66624d;
+  --entry: #FFF7EC;
+  --map-btn: #e6a52e;
+  --bs-primary: #1E1E1E;
+  --bs-secondary: #6C6C6C;
+  --bs-font-sans-serif: "Crimson Pro", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
+
+html {
+  font-size: 1.1rem;
+  scrollbar-color: var(--theme4) var(--theme1);
+  scrollbar-width: thin; }
+  html::-webkit-scrollbar {
+    width: 8px;
+    background: var(--theme1); }
+  html::-webkit-scrollbar-thumb {
+    background: var(--theme4); }
 
 body {
-  background: var(--code-bg); }
+  background: var(--theme1);
+  color: var(--bs-primary); }
 
-main {
+a {
+  text-decoration: none;
+  color: var(--theme8); }
+  a:hover {
+    color: var(--theme5); }
+
+.post-entry, .first-entry {
+  transition: background .2s; }
+  .post-entry a, .first-entry a {
+    color: inherit; }
+  .post-entry h2, .first-entry h2 {
+    color: var(--theme8); }
+  .post-entry:hover, .first-entry:hover {
+    background: var(--theme3); }
+
+.btn {
+  background: var(--theme4);
+  border-radius: .5em; }
+
+.navbar {
+  background: var(--theme1); }
+
+main, .main-content {
   margin: 76px auto 0 auto;
   padding: 0 var(--gap);
   max-width: calc(var(--main-width) + 2 * var(--gap)); }
-  main img {
+  main img, .main-content img {
     width: 100%;
     max-width: var(--main-width); }
-  main .author-image {
+  main .author-image, .main-content .author-image {
     display: inline-block;
     object-fit: cover;
     border-radius: 50%;
@@ -33,5 +71,81 @@ main {
     height: 100px;
     width: 100px; }
 
+.carousel .carousel-item {
+  height: 500px; }
+
+.carousel-item img {
+  position: absolute;
+  object-fit: contain;
+  top: 0;
+  left: 0;
+  height: clamp(500px, 500px, 500px); }
+
+.map-wrapper {
+  position: relative;
+  overflow-x: scroll;
+  scrollbar-color: var(--theme4) var(--theme1);
+  scrollbar-width: thin; }
+  .map-wrapper::-webkit-scrollbar {
+    height: 8px;
+    background: var(--theme1); }
+  .map-wrapper::-webkit-scrollbar-thumb {
+    background: var(--theme4); }
+  .map-wrapper .map {
+    position: relative; }
+  .map-wrapper object, .map-wrapper .map {
+    width: 100%;
+    min-width: calc((100vh - 92px) * 1552 / 931.4);
+    min-height: calc(100vh - 92px); }
+  .map-wrapper a {
+    display: table;
+    position: absolute;
+    background: var(--map-btn);
+    font-size: .75em;
+    min-width: 45px;
+    max-width: 90px;
+    outline: none;
+    border-radius: 50%;
+    hyphens: auto;
+    padding: .25em;
+    opacity: .8;
+    transition: all .5s;
+    transform: translate(-50%, -50%); }
+    .map-wrapper a:hover {
+      opacity: unset;
+      transform: scale(2) translate(-25%, -25%); }
+    .map-wrapper a::before {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      padding-top: 100%; }
+    .map-wrapper a span {
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+      width: min-content;
+      line-height: 0.9; }
+
+main article {
+  padding: 2em;
+  border-radius: 1em;
+  margin-bottom: 1em;
+  background: var(--theme2); }
+
 .post-content {
   padding: var(--gap) 0; }
+
+.footer {
+  max-width: calc(var(--main-width) + var(--gap) * 2);
+  margin: auto;
+  padding: calc((var(--footer-height) - var(--gap)) / 2) var(--gap);
+  text-align: center;
+  line-height: 1rem;
+  font-size: .8rem;
+  color: var(--theme5); }
+  .footer a {
+    color: inherit;
+    border-bottom: 1px solid var(--bs-secondary); }
+    .footer a:hover {
+      color: var(--bs-primary);
+      border-bottom: 1px solid var(--bs-primary); }

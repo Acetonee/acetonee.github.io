@@ -54,7 +54,10 @@
                     <img src="{{- index .Site.Params.label.icon 1 -}}" alt="logo" aria-label="logo" height="{{- .Site.Params.label.iconHeight | default " 30px" -}}">
                 </picture>
                 {{- end -}}
-                {{- $label_text -}}
+                {{- if (.Site.Params.label.doNotShowTitle | default false) }}
+                {{- else }}
+                    {{- $label_text -}}
+                {{- end -}}
                 </a>
                 {{- end }}
                 <span class="logo-switches">
@@ -110,7 +113,7 @@
                     {{- $page_url:= $currentPage.Permalink | absLangURL }}
                     {{- $is_search := eq ($.Site.GetPage .KeyName).Layout `search` }}
                     <li class="nav-item dropdown">
-                        <a href="{{ .URL | absLangURL }}" title="{{ .Title | default .Name }} {{- cond $is_search (" (Alt + /)" | safeHTMLAttr) ("" | safeHTMLAttr ) }}"
+                        <a class="btn" href="{{ .URL | absLangURL }}" title="{{ .Title | default .Name }} {{- cond $is_search (" (Alt + /)" | safeHTMLAttr) ("" | safeHTMLAttr ) }}"
                         {{- cond $is_search (" accesskey=/" | safeHTMLAttr) ("" | safeHTMLAttr ) }}>
                         <span {{- if eq $menu_item_url $page_url }} class="active" {{- end }}>
                             {{- .Pre }}

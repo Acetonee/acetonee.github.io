@@ -26,7 +26,7 @@ body {
     font-size: 18px;
     line-height: 1.6;
     word-break: break-word;
-    background: var(--theme);
+    background: var(--theme1);
 }
 
 article,
@@ -107,7 +107,7 @@ input[type=submit] {
 
 input:-webkit-autofill,
 textarea:-webkit-autofill {
-    box-shadow: 0 0 0 50px var(--theme) inset;
+    box-shadow: 0 0 0 50px var(--theme1) inset;
 }
 
 img {
@@ -125,7 +125,7 @@ img {
 
 ::-webkit-scrollbar-thumb {
     background: var(--tertiary);
-    border: 5px solid var(--theme);
+    border: 5px solid var(--theme1);
     border-radius: var(--radius);
 }
 

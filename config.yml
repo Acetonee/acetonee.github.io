@@ -1,0 +1,26 @@
+baseURL: 'https://acetonee.github.io'
+languageCode: en-HK
+title: Happy Thursday – Tea from Around the World
+theme: qcac
+taxonomies:
+  continent: continents
+params:
+  mainSections:
+    - regions
+    - "regions/oman"
+  disableThemeToggle: true
+  disableScrollToTop: true
+  ShowBreadCrumbs: true
+  label:
+    icon:
+      - /media/HKU-CEDARS-GE.webp
+      - /media/HKU-CEDARS-GE.png
+    iconHeight: 60
+    text: "Happy Thursday – Tea from Around the World"
+    doNotShowTitle: true
+  env: production
+  description: Idk askdjfksdjdciawueb
+menu:
+  main:
+    - name: All Regions
+      url: /regions/
